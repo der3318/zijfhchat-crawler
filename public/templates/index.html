@@ -1,0 +1,77 @@
+{% extends "base" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- padding -->
+<br><br>
+
+<!-- page contents -->
+<div class="ui center aligned grid">
+    <div class="fourteen wide column">
+        <table id="board" class="ui large celled padded table">
+            <thead>
+            <tr>
+                <th class="">Dependency</th>
+                <th class="">Version</th>
+                <th class="">Download</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><i class="linux icon"></i> Linux</td>
+                <td>5.0.7-arch1-1-ARCH x86_64</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><i class="cogs icon"></i> JRE/JDK</td>
+                <td>12.0.1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><i class="cogs icon"></i> Gradle</td>
+                <td>5.4.1</td>
+                <td><a href="https://services.gradle.org/distributions/gradle-5.4.1-bin.zip"><i
+                        class="download icon"></i> zip</a></td>
+            </tr>
+            <tr>
+                <td><i class="database icon"></i> SQLite</td>
+                <td>3.1.12</td>
+                <td><a href="https://sqlitebrowser.org/dl/"><i class="download icon"></i> official
+                    website</a></td>
+            </tr>
+            <tr>
+                <td><i class="js icon"></i> JQuery</td>
+                <td>3.1.1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><i class="css3 alternate icon"></i> Semantic UI</td>
+                <td>2.4.1</td>
+                <td><a href="https://github.com/Semantic-Org/Semantic-UI-CSS/archive/master.zip"><i
+                        class="download icon"></i> zip</a></td>
+            </tr>
+            </tbody>
+            <tr>
+                <td><i class="edge icon"></i> Jooby</td>
+                <td>1.5.0</td>
+                <td><a href="https://jooby.org/"><i class="download icon"></i> official website</a>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th><b>Last Updated on</b></th>
+                <th><b><i class="time icon"></i> 2019/06/28</b></th>
+                <th></th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<!-- page scripts -->
+<script type="text/javascript" src="/javascripts/index.js"></script>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Jooby - {% block title %}{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" href="/images/website.ico" type="image/x-icon">
+    <link rel="stylesheet prefetch"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet prefetch"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css">
+    <link rel="stylesheet prefetch"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/modal.min.css">
+    <link rel="stylesheet prefetch"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/table.min.css">
+    <link rel="stylesheet prefetch"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/form.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/modal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/form.min.js"></script>
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- navigation bar -->
+<div class="ui grey secondary pointing menu">
+    <a id="home" class="item" href="/">
+        <h5>
+            <i class="home icon"></i>
+            Home
+        </h5>
+    </a>
+    <a id="images" class="item" href="/images">
+        <h5>
+            <i class="image icon"></i>
+            Images
+        </h5>
+    </a>
+    <a id="zijfhchat" class="item" href="/zijfhchat/47">
+        <h5>
+            <i class="bullhorn icon"></i>
+            紫禁繁花對話紀錄
+        </h5>
+    </a>
+    <div class="right menu">
+        <div class="item">
+            <div class="ui icon input">
+                {% if search == "" %}
+                <input id="input" type="text" placeholder="Search...">
+                {% else %}
+                <input id="input" type="text" placeholder="Search..." value="{{ search }}">
+                {% endif %}
+                <i id="search" class="search link icon"></i>
+            </div>
+        </div>
+        <a class="ui item">
+            <h5>
+                <i class="sign out icon"></i>
+                Logout
+            </h5>
+        </a>
+    </div>
+</div>
+
+<!-- content -->
+<div id="content">
+    {% block content %}{% endblock %}
+</div>
+
+<!-- footer -->
+<div id="footer">
+    {% block footer %}
+    <div class="ui center aligned grid">
+        <div class="fourteen wide column">
+            <div class="ui segment">
+                <a href="mailto:b03902015@ntu.edu.tw">
+                    <h5 class="ui header">
+                        <i class="envelope icon"></i>
+                        Contact - Wei Te Chien
+                    </h5>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</div>
+
+<!-- page scripts -->
+<script type="text/javascript" src="/javascripts/base.js">
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+{% extends "base" %}
+
+{% block title %}紫禁繁花對話紀錄{% endblock %}
+
+{% block content %}
+
+<!-- padding -->
+<br><br>
+
+<!-- filter -->
+<div class="ui center aligned grid">
+    <div class="fourteen wide column">
+        <div id="banner" class="ui segment">
+            <div class="ui black top attached label">
+                <h5><i class="wrench icon"></i> 搜尋設定 </h5>
+            </div>
+            <br><br>
+            <form action="/zijfhchat/47" method="get">
+                <div class="ui form">
+                    <div class="ui fields">
+                        <div class="one wide field"></div>
+                        <div class="four wide field">
+                            <select name="op">
+                                {% if op == "" %}
+                                <option value="" selected="selected">無過濾</option>
+                                {% else %}
+                                <option value="">無過濾</option>
+                                {% endif %}
+                                {% if op == "keyword" %}
+                                <option value="keyword" selected="selected">關鍵字</option>
+                                {% else %}
+                                <option value="keyword">關鍵字</option>
+                                {% endif %}
+                                {% if op == "userid" %}
+                                <option value="userid" selected="selected">玩家 ID</option>
+                                {% else %}
+                                <option value="userid">玩家 ID</option>
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="four wide field">
+                            {% if op == "" or query == "" %}
+                            <input name="query" type="text" placeholder="輸入文字或數字...">
+                            {% else %}
+                            <input name="query" type="text" placeholder="輸入文字或數字..."
+                                   value="{{ query }}">
+                            {% endif %}
+                        </div>
+                        <div class="four wide field">
+                            <select name="n">
+                                {% if n == 100 %}
+                                <option value="100" selected="selected">最近 100 筆</option>
+                                {% else %}
+                                <option value="100">最近 100 筆</option>
+                                {% endif %}
+                                {% if n == 500 %}
+                                <option value="500" selected="selected">最近 500 筆</option>
+                                {% else %}
+                                <option value="500">最近 500 筆</option>
+                                {% endif %}
+                                {% if n == 1000 %}
+                                <option value="1000" selected="selected">最近 1000 筆</option>
+                                {% else %}
+                                <option value="1000">最近 1000 筆</option>
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="two wide field">
+                            <button id="submit" type="submit" class="ui icon button">
+                                <i class="filter icon"></i> 查詢
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- page contents -->
+<div class="ui center aligned grid">
+    <div class="fifteen wide column">
+        <table id="board" class="ui large celled padded table">
+            <thead>
+            <tr>
+                <th class="four wide center aligned">玩家名稱</th>
+                <th class="nine wide center aligned">對話內容</th>
+                <th class="three wide center aligned">時間</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for record in recordList %}
+            <tr>
+                <td>
+                    <i class="user circle icon"></i> {{ record.name }}
+                    <br>
+                    <i class="hashtag icon"></i> {{ record.userid }} - {{ record.level }} 等
+                </td>
+                <td><i class="comment outline icon"></i> {{ record.message }}</td>
+                <td class="right aligned">{{ record.time }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <th class="center aligned"><b><i class="server icon"></i> 伺服器</b></th>
+                <th class="center aligned"><b>紫禁繁花 {{ sevid }} 區</b></th>
+                {% if offline %}
+                <th class="center aligned"><i class="close icon"></i> 已斷線</th>
+                {% else %}
+                <th class="center aligned"><i class="checkmark icon"></i> 連線正常</th>
+                {% endif %}
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<!-- reload setting -->
+<div class="ui center aligned grid">
+    <div class="fifteen wide column">
+        <div id="reload" class="ui segment">
+            <div class="field">
+                <div class="ui toggle checkbox">
+                    {% if reload %}
+                    <input type="checkbox" tabindex="0" class="hidden" checked="checked" autofocus>
+                    {% else %}
+                    <input type="checkbox" tabindex="0" class="hidden">
+                    {% endif %}
+                    <label><i class="hourglass half icon"></i> 自動重載頁面，並跳至最下方（更新頻率為十秒，且不套用選定的搜尋條件）</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- page scripts -->
+<script type="text/javascript" src="/javascripts/zijfhchat.js?time=201907011650"></script>
+
+{% endblock %}

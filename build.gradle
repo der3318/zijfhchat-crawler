@@ -1,0 +1,78 @@
+buildscript {
+    ext {
+        joobyVersion = "1.5.0"
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "com.google.gradle:osdetector-gradle-plugin:1.4.0"
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE"
+        classpath "org.jooby:jooby-gradle-plugin:$joobyVersion"
+        classpath "com.github.jengelman.gradle.plugins:shadow:4.0.1"
+    }
+}
+
+apply plugin: "io.spring.dependency-management"
+apply plugin: "com.google.osdetector"
+apply plugin: "application"
+apply plugin: "jooby"
+apply plugin: "com.github.johnrengelman.shadow"
+
+group "starter.gradle"
+version "1.0"
+mainClassName = "starter.gradle.App"
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.jooby:jooby-bom:$joobyVersion"
+    }
+}
+
+dependencies {
+    compile "org.jooby:jooby-netty"
+    compile "io.netty:netty-transport-native-epoll:${dependencyManagement.importedProperties['netty.version']}:${osdetector.classifier.contains('linux') ? 'linux-x86_64' : ''}"
+    compile "io.netty:netty-tcnative-boringssl-static:${dependencyManagement.importedProperties['boringssl.version']}"
+
+    /** json parser */
+    compile "org.json:json:20180813"
+
+    /** twilio api */
+    compile "com.twilio.sdk:twilio:7.40.0"
+
+    /** template engine */
+    compile "org.jooby:jooby-pebble:1.6.0"
+
+    /** database interface */
+    compile "org.jooby:jooby-jdbi3:1.6.0"
+
+    /** database dependency */
+    compile "com.h2database:h2:1.3.148"
+    compile "org.xerial:sqlite-jdbc:3.8.11.2"
+
+    /** json utility */
+    compile "org.jooby:jooby-jackson:1.6.2"
+
+    /** executor */
+    compile "org.jooby:jooby-executor:1.6.2"
+
+    testCompile "junit:junit:4.12"
+    testCompile "io.rest-assured:rest-assured:3.1.0"
+}
+
+/** We diverge from the default resources structure to adopt the Jooby standard: */
+sourceSets.main.resources {
+    srcDirs = ["conf", "public"]
+}
