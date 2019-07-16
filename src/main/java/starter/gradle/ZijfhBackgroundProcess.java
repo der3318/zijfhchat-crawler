@@ -19,7 +19,7 @@ public class ZijfhBackgroundProcess implements Runnable {
 
     private App app;
     private int sevid;
-    private String uid, token;
+    private String uid, token, ver;
 
     public ZijfhBackgroundProcess(App _app) {
         Config conf = _app.require(Config.class);
@@ -27,6 +27,24 @@ public class ZijfhBackgroundProcess implements Runnable {
         this.sevid = conf.getInt("zijfhchat.sevid");
         this.uid = conf.getString("zijfhchat.uid");
         this.token = conf.getString("zijfhchat.token");
+        this.ver = conf.getString("zijfhchat.ver");
+    }
+
+    private void sendLineNotification(String _msg) throws Exception {
+        Config conf = this.app.require(Config.class);
+        String urlFormat = conf.getString("line.notificationURL");
+        URL url = new URL(urlFormat);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("POST");
+        String urlParameters = "msg=" + Utils.encodeToURL(_msg);
+        con.setDoOutput(true);
+        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        in.read();
+        in.close();
     }
 
     @Override
@@ -36,8 +54,8 @@ public class ZijfhBackgroundProcess implements Runnable {
         try {
             while (true) {
                 /** http request */
-                String urlFormat = "http://152.32.166.11/servers/s%d.php?ver=1.1.5.112&platform=epandxianyuovergat_zjfh&lang=tw&sevid=%d&uid=%s&token=%s";
-                URL url = new URL(String.format(urlFormat, this.sevid, this.sevid, this.uid, this.token));
+                String urlFormat = "http://152.32.166.11/servers/s%d.php?ver=%s&platform=epandxianyuovergat_zjfh&lang=tw&sevid=%d&uid=%s&token=%s";
+                URL url = new URL(String.format(urlFormat, this.sevid, this.ver, this.sevid, this.uid, this.token));
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 /** request property */
                 con.setRequestMethod("POST");
@@ -80,16 +98,20 @@ public class ZijfhBackgroundProcess implements Runnable {
                         int level = obj.getJSONObject("user").getInt("level");
                         int sex = obj.getJSONObject("user").getInt("sex");
                         int chenghao = obj.getJSONObject("user").getInt("chenghao");
+                        int vip = obj.getJSONObject("user").getInt("vip");
                         /** print to standard error */
                         System.err.print("----------------------------------------INFO--------------------------------------------\n");
-                        String chatFormat = "\t%s %s - %s\n\tisGM=%d userid=%d level=%d sex=%d chenghao=%d\n";
-                        System.err.print(String.format(chatFormat, time, name, message, isGM, userid, level, sex, chenghao));
+                        String chatFormat = "\t%s %s - %s\n\tisGM=%d userid=%d level=%d sex=%d chenghao=%d vip=%d\n";
+                        System.err.print(String.format(chatFormat, time, name, message, isGM, userid, level, sex, chenghao, vip));
                         System.err.print(String.format("---------------------------------------------------------------------%s\n\n", Utils.getCurrentDateString()));
                         /** add to database */
                         jdbi.useHandle(h -> {
-                            String sqlFormat = "INSERT INTO zijfhchat%d (time, name, message, isGM, userid, level, sex, chenghao) VALUES ('%s', '%s', '%s', %d, %d, %d, %d, %d)";
-                            h.createUpdate(String.format(sqlFormat, this.sevid, time, name, message, isGM, userid, level, sex, chenghao)).execute();
+                            String sqlFormat = "INSERT INTO zijfhchat%d (time, name, message, isGM, userid, level, sex, chenghao, vip) VALUES ('%s', '%s', '%s', %d, %d, %d, %d, %d, %d)";
+                            h.createUpdate(String.format(sqlFormat, this.sevid, time, name, message, isGM, userid, level, sex, chenghao, vip)).execute();
                         });
+                        /** send line notification */
+                        String lineMsgFormat = "\n\uD83C\uDD94 %s \uD83C\uDFC5 %s\n\uD83D\uDC64 %s\n\u270F\uFE0F %s";
+                        this.sendLineNotification(String.format(lineMsgFormat, userid, vip, name, message));
                     }
                 }
                 /** sleep five seconds */

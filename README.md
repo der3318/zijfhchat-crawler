@@ -1,45 +1,52 @@
-## µµ¸TÁcªá - ²á¤Ñ«Çª¦ÂÎ»P§Y®É¬d¸ß
-### Â²¤¶
-³z¹L¦w¸ËÀÉ©î¥]»P«Ê¥]ºÊÅ¥¡AÂ^¨ú¦øªA¾¹ºô§}»P¬ÛÃö½Ğ¨Dªº¼ĞÀY¤Î°Ñ¼Æ¡A³Ì«á°°¸Ë¦b½u±b¸¹³Æ¥÷²á¤ÑÀW¹D¦Ü¸ê®Æ®w¡A¨Ã´£¨Ñºô­¶¤¶­±ÂsÄı¤Î¬d¸ß
+## ç´«ç¦ç¹èŠ± - èŠå¤©å®¤çˆ¬èŸ²èˆ‡å³æ™‚æŸ¥è©¢
+### ç°¡ä»‹
+é€éå®‰è£æª”æ‹†åŒ…èˆ‡å°åŒ…ç›£è½ï¼Œæ“·å–ä¼ºæœå™¨ç¶²å€èˆ‡ç›¸é—œè«‹æ±‚çš„æ¨™é ­åŠåƒæ•¸ï¼Œæœ€å¾Œå½è£åœ¨ç·šå¸³è™Ÿå‚™ä»½èŠå¤©é »é“è‡³è³‡æ–™åº«ï¼Œä¸¦æä¾›ç¶²é ä»‹é¢ç€è¦½åŠæŸ¥è©¢
 
 
-### ®Ø¬[¤Î¬ÛÃö¤u¨ã
-|ºô¯¸¶}·½®Ø¬[|[Jooby](https://jooby.org/)|
+### æ¡†æ¶åŠç›¸é—œå·¥å…·
+|ç¶²ç«™é–‹æºæ¡†æ¶|[Jooby](https://jooby.org/)|
 |:-:|:-:|
-|¸ê®Æ®wÂsÄı|[SQLite](https://www.sqlite.org/index.html)|
-|¦Û°Ê¤Æ«Ø¸m|[Gradle v4.8](https://gradle.org/)|
-|ºô­¶«eºİ®Ø¬[|[Semantic UI v2.4.1](https://semantic-ui.com/)|
-|¦w¸ËÀÉ©â¨ú|[APK ©â¨ú v1.3.7](https://play.google.com/store/apps/details?id=com.pandaz.apkextraction&hl=zh_TW&showAllReviews=true)|
-|±M®×¤Ï½sÄ¶|[Java Decompilers](http://www.javadecompilers.com/apk)|
-|¤â¾÷«Ê¥]ºÊÅ¥|[Packet Capture v1.5.0](https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&hl=en_US)|
-|´ú¸Õ¼ÒÀÀ¤u¨ã|[API Tester](https://apitester.com/)|
-|Â²°TÂ_½u³qª¾|[Twilio](https://www.twilio.com/console)|
+|è³‡æ–™åº«ç€è¦½|[SQLite](https://www.sqlite.org/index.html)|
+|è‡ªå‹•åŒ–å»ºç½®|[Gradle v4.8](https://gradle.org/)|
+|ç¶²é å‰ç«¯æ¡†æ¶|[Semantic UI v2.4.1](https://semantic-ui.com/)|
+|å®‰è£æª”æŠ½å–|[APK æŠ½å– v1.3.7](https://play.google.com/store/apps/details?id=com.pandaz.apkextraction&hl=zh_TW&showAllReviews=true)|
+|å°ˆæ¡ˆåç·¨è­¯|[Java Decompilers](http://www.javadecompilers.com/apk)|
+|æ‰‹æ©Ÿå°åŒ…ç›£è½|[Packet Capture v1.5.0](https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&hl=en_US)|
+|æ¸¬è©¦æ¨¡æ“¬å·¥å…·|[API Tester](https://apitester.com/)|
+|ç°¡è¨Šæ–·ç·šé€šçŸ¥|[Twilio](https://www.twilio.com/console)|
+|æ‰‹æ©Ÿè¨Šæ¯æ¨æ’­|[LINE Notify](https://notify-bot.line.me/en/)|
 
 
-### ¹B¦æ»P§G¸p
-#### 1. ¤U¸ü¹CÀ¸¨Ã©â¨ú¦w¸ËÀÉ¡A©Î¬O³z¹L«Ê¥]ºÊÅ¥¡A¬d¸ß¹CÀ¸¦øªA¾¹¬ÛÃö¸ê°T
+### é‹è¡Œèˆ‡ä½ˆç½²
+#### 1. ä¸‹è¼‰éŠæˆ²ä¸¦æŠ½å–å®‰è£æª”ï¼Œæˆ–æ˜¯é€éå°åŒ…ç›£è½ï¼ŒæŸ¥è©¢éŠæˆ²ä¼ºæœå™¨ç›¸é—œè³‡è¨Š
 |![Imgur](https://i.imgur.com/6Vx8JDx.png)|![Imgur](https://i.imgur.com/xjrABRc.png)|![Imgur](https://i.imgur.com/YkNVcBS.png)|
 |:-:|:-:|:-:|
 
 
-#### 2. °Ñ¼Æ­×§ï»P³]©w
-* ¥]§t¤F Twilio ±b¸¹»P¹q¸Ü¡A¥H¤Î¦øªA¾¹¬ÛÃö¸ê°T
-* ¥D­n­×§ïÀÉ®× `conf/application.conf`
-* ¥i¯à»İ­n­×§ïªºÀÉ®× `src/main/java/starter/gradle/ZijfhBackgroundProcess.java`
+#### 2. åƒæ•¸ä¿®æ”¹èˆ‡è¨­å®š
+* åŒ…å«äº† Twilio å¸³è™Ÿèˆ‡é›»è©±ã€Line Notifyï¼Œä»¥åŠä¼ºæœå™¨ç›¸é—œè³‡è¨Š
+* ä¸»è¦ä¿®æ”¹æª”æ¡ˆ `conf/application.conf`
+* å¯èƒ½éœ€è¦ä¿®æ”¹çš„æª”æ¡ˆ `src/main/java/starter/gradle/ZijfhBackgroundProcess.java`
 
 
-#### 3. ºô¯¸¬[³]»P­I´ºªA°È±¾¸ü
-°Ñ¦Ò[Jooby ©x¤èºô¯¸](https://jooby.org)»P[±Ğ¾Ç±M®×](https://github.com/jooby-project/gradle-starter)
+#### 3. ç¶²ç«™æ¶è¨­èˆ‡èƒŒæ™¯æœå‹™æ›è¼‰
+åƒè€ƒ[Jooby å®˜æ–¹ç¶²ç«™](https://jooby.org)èˆ‡[æ•™å­¸å°ˆæ¡ˆ](https://github.com/jooby-project/gradle-starter)
 
 
-##### ºô­¶¤¶­±
+##### ç¶²é ä»‹é¢
 ![Imgur](https://i.imgur.com/GeU8I5T.png)
 
 
-##### ­I´ºµ{¦¡
+##### èƒŒæ™¯ç¨‹å¼
 ![Imgur](https://i.imgur.com/LWYXCIu.png)
 
 
-##### ¸ê®Æ®w
+##### è³‡æ–™åº«
 ![Imgur](https://i.imgur.com/Tdg72Nb.png)
+
+
+##### LINE è¨Šæ¯æ¨æ’­
+|![Imgur](https://i.imgur.com/0yWg21g.png)|![Imgur](https://i.imgur.com/70K9p79.png)|![Imgur](https://i.imgur.com/qSFiw1E.png)|
+|:-:|:-:|:-:|
+
 

@@ -65,7 +65,7 @@ public class App extends Jooby {
             /** table zijfhchat */
             if (!tableNameList.contains(String.format("zijfhchat%d", sevid))) {
                 jdbi.useHandle(h -> {
-                    String sqlFormat = "CREATE TABLE zijfhchat%d (id INTEGER PRIMARY KEY, time VARCHAR(255), name VARCHAR(255), message VARCHAR(255), isGM INTEGER, userid INTEGER, level INTEGER, sex INTEGER, chenghao INTEGER)";
+                    String sqlFormat = "CREATE TABLE zijfhchat%d (id INTEGER PRIMARY KEY, time VARCHAR(255), name VARCHAR(255), message VARCHAR(255), isGM INTEGER, userid INTEGER, level INTEGER, sex INTEGER, chenghao INTEGER, vip INTEGER)";
                     h.createUpdate(String.format(sqlFormat, sevid)).execute();
                 });
             }

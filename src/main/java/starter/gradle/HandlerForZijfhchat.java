@@ -5,8 +5,6 @@ import org.jooby.Request;
 import org.jooby.Results;
 import org.jooby.Route;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collections;
@@ -19,7 +17,7 @@ public class HandlerForZijfhchat implements Route.OneArgHandler {
      */
     public static class ChatRecord {
         public String time, name, message;
-        public int isGM, userid, level, sex, chenghao;
+        public int isGM, userid, level, sex, chenghao, vip;
 
         public ChatRecord(ResultSet _rs) throws SQLException {
             this.time = _rs.getString("time").replace("+0800", "").replaceAll("[0-9][0-9][0-9][0-9]/", "");
@@ -30,6 +28,7 @@ public class HandlerForZijfhchat implements Route.OneArgHandler {
             this.level = _rs.getInt("level");
             this.sex = _rs.getInt("sex");
             this.chenghao = _rs.getInt("chenghao");
+            this.vip = _rs.getInt("vip");
         }
     }
 
@@ -49,7 +48,7 @@ public class HandlerForZijfhchat implements Route.OneArgHandler {
         boolean reload = req.param("reload").booleanValue(false);
         /** query records from database */
         List<ChatRecord> recordList = jdbi.withHandle(h -> {
-            String sqlFormat = "SELECT time, name, message, isGM, userid, level, sex, chenghao FROM zijfhchat%d ORDER BY id DESC LIMIT %d";
+            String sqlFormat = "SELECT time, name, message, isGM, userid, level, sex, chenghao, vip FROM zijfhchat%d ORDER BY id DESC LIMIT %d";
             String sql = String.format(sqlFormat, sevid, n);
             if (op.equals("keyword")) {
                 String token = "%" + query + "%";
