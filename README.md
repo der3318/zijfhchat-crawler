@@ -10,7 +10,9 @@
 |自動化建置|[Gradle v4.8](https://gradle.org/)|
 |網頁前端框架|[Semantic UI v2.4.1](https://semantic-ui.com/)|
 |安裝檔抽取|[APK 抽取 v1.3.7](https://play.google.com/store/apps/details?id=com.pandaz.apkextraction&hl=zh_TW&showAllReviews=true)|
-|專案反編譯|[Java Decompilers](http://www.javadecompilers.com/apk)|
+|線上專案反編譯服務|[Java Decompilers](http://www.javadecompilers.com/apk)|
+|圖形介面反編譯工具|[JADX v1.1.0](https://github.com/skylot/jadx)|
+|逆向工程軟件|[IDA Pro v6.6](https://drive.google.com/file/d/0B_AaT8KxPtVWZlhGbDZDYzFEakU/view?usp=sharing)|
 |手機封包監聽|[Packet Capture v1.5.0](https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&hl=en_US)|
 |測試模擬工具|[API Tester](https://apitester.com/)|
 |簡訊斷線通知|[Twilio](https://www.twilio.com/console)|
@@ -21,6 +23,9 @@
 #### 1. 下載遊戲並抽取安裝檔，或是透過封包監聽，查詢遊戲伺服器相關資訊
 |![Imgur](https://i.imgur.com/6Vx8JDx.png)|![Imgur](https://i.imgur.com/xjrABRc.png)|![Imgur](https://i.imgur.com/YkNVcBS.png)|
 |:-:|:-:|:-:|
+
+|![Imgur](https://i.imgur.com/nr6eDh2.png)|![Imgur](https://i.imgur.com/2GN0Pht.png)|
+|:-:|:-:|
 
 
 #### 2. 參數修改與設定
