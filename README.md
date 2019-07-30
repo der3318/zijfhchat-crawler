@@ -12,7 +12,7 @@
 |安裝檔抽取|[APK 抽取 v1.3.7](https://play.google.com/store/apps/details?id=com.pandaz.apkextraction&hl=zh_TW&showAllReviews=true)|
 |線上專案反編譯服務|[Java Decompilers](http://www.javadecompilers.com/apk)|
 |圖形介面反編譯工具|[JADX v1.1.0](https://github.com/skylot/jadx)|
-|逆向工程軟件|[IDA Pro v6.6](https://drive.google.com/file/d/0B_AaT8KxPtVWZlhGbDZDYzFEakU/view?usp=sharing)|
+|逆向工程軟件|[IDA Pro v7.0](http://www.42xz.com/soft/2307.html)|
 |手機封包監聽|[Packet Capture v1.5.0](https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&hl=en_US)|
 |測試模擬工具|[API Tester](https://apitester.com/)|
 |簡訊斷線通知|[Twilio](https://www.twilio.com/console)|
