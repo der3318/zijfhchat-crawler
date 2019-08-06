@@ -39,7 +39,8 @@
 
 
 ##### 網頁介面
-![Imgur](https://i.imgur.com/GeU8I5T.png)
+|![Imgur](https://i.imgur.com/pKuuUpo.png)|![Imgur](https://i.imgur.com/2ta4K03.png)|
+|:-:|:-:|
 
 
 ##### 背景程式

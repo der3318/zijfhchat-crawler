@@ -98,6 +98,9 @@ public class App extends Jooby {
 
         /** GET - zijfhchat */
         get("/zijfhchat/{sevid}", new HandlerForZijfhchat(this));
+
+        /** GET - zijfhclub */
+        get("/zijfhclub/{sevid}", new HandlerForZijfhclub());
     }
 
     public static void main(String[] args) {

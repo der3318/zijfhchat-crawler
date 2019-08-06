@@ -9,6 +9,8 @@ if (window.location.href.includes("/images")) {
     document.getElementById("images").classList.add("active");
 } else if (window.location.href.includes("/zijfhchat")) {
     document.getElementById("zijfhchat").classList.add("active");
+} else if (window.location.href.includes("/zijfhclub")) {
+    document.getElementById("zijfhclub").classList.add("active");
 } else {
     document.getElementById("home").classList.add("active");
 }

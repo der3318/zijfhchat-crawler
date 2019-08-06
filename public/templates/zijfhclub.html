@@ -1,0 +1,134 @@
+{% extends "base" %}
+
+{% block title %}紫禁繁花宮殿資訊{% endblock %}
+
+{% block content %}
+
+<!-- padding -->
+<br><br>
+
+<!-- banner -->
+<div class="ui grid">
+    <div class="two wide column"></div>
+    <div id="banner" class="eight wide column">
+        <div class="ui grid">
+            <div class="four wide column"></div>
+            <div class="twelve wide column">
+                <br><br>
+                <img class="disabled big ui image" src="/images/clubtitle.png">
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="four wide column">
+        <br>
+        <table class="ui basic table">
+            <thead>
+            <tr>
+                <th class="center aligned">
+                    <i class="edit outline icon"></i>
+                    最後更新時間
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="center aligned">
+                    {{ updateTime }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="two wide column"></div>
+</div>
+
+<!-- page contents -->
+<div class="ui center aligned grid">
+    <div class="fourteen wide column">
+        <table id="board" class="ui single line table">
+            <thead>
+            <tr>
+                <th class="center aligned">
+                    <i class="trophy icon"></i>
+                    排名
+                </th>
+                <th class="center aligned">
+                    <i class="tag icon"></i>
+                    名稱
+                </th>
+                <th class="center aligned">
+                    <i class="hashtag icon"></i>
+                    編號
+                </th>
+                <th class="center aligned">
+                    <i class="star outline icon"></i>
+                    等級
+                </th>
+                <th class="center aligned">
+                    <i class="graduation cap icon"></i>
+                    經驗
+                </th>
+                <th class="center aligned">
+                    <i class="dollar sign icon"></i>
+                    資金
+                </th>
+                <th class="center aligned">
+                    <i class="child icon"></i>
+                    人數
+                </th>
+                <th class="center aligned">
+                    <i class="flag outline icon"></i>
+                    勢力
+                </th>
+                <th class="center aligned">
+                    <i class="universal access icon"></i>
+                    隨機
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for clubInfo in clubInfoList %}
+            <tr>
+                <td class="center aligned">
+                    {{ clubInfo.rid }}
+                </td>
+                <td class="center aligned">
+                    {{ clubInfo.name }}
+                </td>
+                <td class="center aligned">
+                    {{ clubInfo.id }}
+                </td>
+                <td class="center aligned">
+                    {{ clubInfo.level }}
+                </td>
+                <td class="center aligned">
+                    {{ clubInfo.exp }}
+                </td>
+                <td class="center aligned">
+                    {{ clubInfo.fund }}
+                </td>
+                <td class="center aligned">
+                    {{ clubInfo.num }}
+                </td>
+                <td class="center aligned">
+                    {{ clubInfo.allShiLi }}
+                </td>
+                <td class="center aligned">
+                    {% if clubInfo.isJoin == "1" %}
+                    啟用
+                    {% else %}
+                    關閉
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- page scripts -->
+<script type="text/javascript" src="/javascripts/zijfhclub.js"></script>
+
+{% endblock %}
