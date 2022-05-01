@@ -19,7 +19,7 @@
 |手機訊息推播|[LINE Notify](https://notify-bot.line.me/en/)|
 
 
-### 運行與佈署
+### 運行與部署
 #### 1. 下載遊戲並抽取安裝檔，或是透過封包監聽，查詢遊戲伺服器相關資訊
 |![Imgur](https://i.imgur.com/6Vx8JDx.png)|![Imgur](https://i.imgur.com/xjrABRc.png)|![Imgur](https://i.imgur.com/YkNVcBS.png)|
 |:-:|:-:|:-:|
@@ -36,6 +36,14 @@
 
 #### 3. 網站架設與背景服務掛載
 參考[Jooby 官方網站](https://jooby.org)與[教學專案](https://github.com/jooby-project/gradle-starter)
+
+
+#### (Optional) Docker 部署運行
+* `$ gradlew shadowJar` 生成 Fat JAR
+* `$ cp -rf build/libs/gradle-starter-1.0-all.jar zijfhchat-crawler.jar` 來移動並重新命名
+* `$ docker build -t zijfhchat-crawler .` 生成鏡像
+* 如有必要，可修改 `DockerFile`、查看鏡像 `$ docker images` 或刪除它 `$ docker rmi -f [image ID]`
+* 掛載 `/DatabaseDir/jooby.db` 並運行 Docker: `$ docker run -p 3318:3318 -v /DatabaseDir:/HostDB zijfhchat-crawler`
 
 
 ##### 網頁介面
