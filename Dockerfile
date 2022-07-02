@@ -1,6 +1,6 @@
 FROM java:8
 MAINTAINER der3318
-COPY ./* /ZijfhchatCrawler/
+COPY ./ /ZijfhchatCrawler/
 VOLUME /HostDB
 EXPOSE 3318
 WORKDIR /ZijfhchatCrawler
